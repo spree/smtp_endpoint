@@ -4,6 +4,8 @@ group :development do
   gem 'pry'
 end
 
+gem "pony"
+
 group :test do
   gem 'rspec'
   gem 'guard-rspec'

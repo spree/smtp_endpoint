@@ -1,0 +1,42 @@
+{
+  "name": "smtp_endpoint",
+  "display": "SMTP Endpoint",
+  "description": "Endpoint that will send notifications via arbitrary smtp server",
+  "help": "http://guides.spreecommerce.com/integration/endpoints",
+  "consumers": [
+    {
+      "name": "send",
+      "path": "/send",
+      "description": "Will send a notification mail.",
+      "requires": {
+        "parameters": [
+          {
+            "name": "smtp.from",
+            "description": "Email address sending the mail",
+            "data_type": "string"
+          },
+          {
+            "name": "smtp.to",
+            "description": "Email address to send the mail to, multiple addresses seperated by ','",
+            "data_type": "string"
+          },
+          {
+            "name": "smtp.cc",
+            "description": "Email address to CC send the mail to, multiple addresses seperated by ','",
+            "data_type": "string"
+          },
+          {
+            "name": "smtp.bcc",
+            "description": "Email address to BCC send the mail to, multiple addresses seperated by ','",
+            "data_type": "string"
+          },
+          {
+            "name": "smtp.options",
+            "description": "The SMTP options like server, username, host etc.",
+            "data_type": "list"
+          }
+        ]
+      }
+    }
+  ]
+}
