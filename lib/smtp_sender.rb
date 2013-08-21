@@ -16,7 +16,7 @@ class SmtpSender
       Pony.mail(
         to: @config['smtp.to'],
         from: @config['smtp.from'],
-        subject: "[LEVEL] #{notification[subject]}",
+        subject: "[#{notification['level']}] #{notification['subject']}",
         body: notification[:description],
         via: :smtp,
         via_options: @config['smtp.options'].first
