@@ -44,9 +44,16 @@ GEM
       rb-inotify (>= 0.9)
       rb-kqueue (>= 0.2)
     lumberjack (1.0.4)
+    mail (2.5.4)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
     method_source (0.8.2)
+    mime-types (1.24)
     minitest (4.7.5)
     multi_json (1.7.9)
+    polyglot (0.3.3)
+    pony (1.5)
+      mail (> 2.0)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -87,6 +94,9 @@ GEM
     thread_safe (0.1.2)
       atomic
     tilt (1.4.1)
+    treetop (1.4.15)
+      polyglot
+      polyglot (>= 0.3.1)
     tzinfo (0.3.37)
     unicorn (4.6.3)
       kgio (~> 2.6)
@@ -100,6 +110,7 @@ DEPENDENCIES
   endpoint_base!
   foreman
   guard-rspec
+  pony
   pry
   rack-test
   rb-fsevent (~> 0.9.1)
