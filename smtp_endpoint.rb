@@ -7,8 +7,8 @@ class SmtpEndpoint < EndpointBase
 
   post '/send' do
     begin
-      message = SmtpSender.new(@message[:payload], @message[:message_id], @config)
-      process_result *message.send
+      sender = SmtpSender.new(@message[:payload], @message[:message_id], @config)
+      process_result *sender.send
     rescue => exception
       process_result *error_result(exception)
     end
