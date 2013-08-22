@@ -41,6 +41,7 @@ class SmtpSender
     }
     options.merge!({cc: @config['smtp.cc']}) if @config['smtp.cc'].present?
     options.merge!({bcc: @config['smtp.bcc']}) if @config['smtp.bcc'].present?
+    options
   end
 
 end

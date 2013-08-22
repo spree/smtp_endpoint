@@ -19,6 +19,7 @@ describe SmtpSender do
   it "set's the correct via_options from config" do
     sender = SmtpSender.new(message['payload'], message['message_id'],config)
     sender.via_options[:address].should eql "smtp.mandrillapp.com"
+    sender.mail_options[:bcc].should eql 'me+bcc@me.com'
   end
 
 end
