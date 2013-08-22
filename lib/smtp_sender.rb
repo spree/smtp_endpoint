@@ -12,16 +12,9 @@ class SmtpSender
   end
 
   def send
+    message = nil
     begin
-      Pony.mail({
-          to: @config['smtp.to'],
-          from: @config['smtp.from'],
-          subject: "[#{notification['level']}] #{notification['subject']}",
-          body: notification[:description],
-          via: :smtp,
-          via_options: @via_options
-        }
-      )
+      message = Pony.mail(mail_options)
     rescue => exception
       return 500, {
         'message_id' => @message_id,
@@ -33,8 +26,22 @@ class SmtpSender
 
     return 200, {
       'message_id' => @message_id,
-      'messages' => [{ 'message' => 'email:sent', 'payload' => {"status" => "ok"} }]
+      'messages' => [{ 'message' => 'email:sent', 'payload' => {"status" => message.inspect} }]
     }
   end
 
+  def mail_options
+    options = {
+      to: @config['smtp.to'],
+      from: @config['smtp.from'],
+      subject: "[#{notification['level']}] #{notification['subject']}",
+      body: notification[:description],
+      via: :smtp,
+      via_options: @via_options
+    }
+    options.merge!({cc: @config['smtp.cc']}) if @config['smtp.cc'].present?
+    options.merge!({bcc: @config['smtp.bcc']}) if @config['smtp.bcc'].present?
+  end
+
 end
+

@@ -12,15 +12,12 @@ describe SmtpEndpoint do
 
   let(:config) {
     [
-      { 'name' => 'smtp.from', 'value' => 'noreply@pero-ict.nl' },
+      { 'name' => 'smtp.from', 'value' => 'noreply@spreecommerce.com' },
       { 'name' => 'smtp.to', 'value' => 'spree@example.com' },
-      { 'name' => 'smtp.options', 'type' => 'list', 'value' => [{
-          "address" => "smtp.mandrillapp.com",
-          "port" => "587",
-          "user_name" => "peter@pero-ict.nl",
-          "password" => "G9a30V1XBE5KWVFMg21MnQ"
-        }]
-      }
+      { 'name' => 'smtp.cc', 'value' => 'spree+cc@example.com' },
+      { 'name' => 'smtp.bcc', 'value' => 'spree+bcc@example.com' },
+      { 'name' => 'smtp.options', 'type' => 'list', 'value' => [Factories.via_options]
+        }
     ]
   }
 
