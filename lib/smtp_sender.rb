@@ -5,7 +5,7 @@ class SmtpSender
   attr_accessor :notification, :message_id, :config, :via_options
 
   def initialize(payload, message_id, config={})
-    @notification = payload['notification']
+    @notification = payload
     @message_id = message_id
     @config = config
     @via_options = config['smtp.options'].first.with_indifferent_access.symbolize_keys
