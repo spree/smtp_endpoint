@@ -25,6 +25,7 @@ describe SmtpEndpoint do
     {
       'store_id' => '123229227575e4645c000001',
       'message_id' => 'abc',
+      "message" => "notification:info",
       'payload' => Factories.notification.merge('parameters' => config)
     }
   }

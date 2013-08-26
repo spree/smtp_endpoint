@@ -2,9 +2,8 @@ module Factories
   class << self
     def notification(args={})
       {
-        "subject" => "An unexpected error occurrred",
-        "description" => "We were unable to process message blah",
-        "level" => "error"
+        "subject" => "order has been imported",
+        "description" => "Order R576512345 has been succesfully imported."
       }.merge(args)
     end
 
