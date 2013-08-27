@@ -16,8 +16,7 @@ describe SmtpEndpoint do
       { 'name' => 'smtp.to', 'value' => 'spree@example.com' },
       { 'name' => 'smtp.cc', 'value' => 'spree+cc@example.com' },
       { 'name' => 'smtp.bcc', 'value' => 'spree+bcc@example.com' },
-      { 'name' => 'smtp.options', 'type' => 'list', 'value' => [Factories.via_options]
-        }
+      { 'name' => 'smtp.options', 'type' => 'list', 'value' => [Factories.via_options]}
     ]
   }
 
