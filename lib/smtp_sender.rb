@@ -19,7 +19,7 @@ class SmtpSender
     rescue => exception
       return 500, {
         'message_id' => @message_id,
-        'payload' => {'config' => @config, 'message' => message.inspect},
+        'payload' => {'parameters' => @config, 'message' => message.inspect},
         'error' => exception.message,
         'backtrace' => exception.backtrace
       }
