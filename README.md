@@ -2,7 +2,7 @@
 
 Send plain text email via SMTP (GMail, Sendgrid, etc.) using notification messages as the input.
 
-* Receives notification:[info|warn|error] messages and sends the notification to the configured recipients.
+* Receives notification (info, warn, error) messages and sends the notification to the configured recipients.
 
 # Message Format
 
@@ -28,33 +28,52 @@ We use the [pony](https://github.com/benprew/pony) gem internally and always con
 
 ```json
 {
-  "store_id": "1234",
-  "message_id": "abc",
-  "message": "notification:info",
-  "payload": {
-    "subject": "This is an info notification",
-    "description": "You just received an info notification, live long and prosper!",
-    "parameters" : [
-      { "name": "smtp.from", "type": "string", "value": "noreply@spreecommerce.com" },
-      { "name": "smtp.to", "type": "string", "value": "spree@example.com" },
-      { "name": "smtp.cc", "type": "string", "value": "spree+cc@example.com" },
-      { "name": "smtp.bcc", "type": "string","value": "spree+bcc@example.com" },
-      { "name": "smtp.options", "type": "list", "value": [{
-                                                            "address": "smtp.mandrillapp.com",
-                                                            "port": "587",
-                                                            "user_name": "peter@spreecommerce.com",
-                                                            "password": "p4ssw0rd!",
-                                                            "enable_starttls_auto": "true",
-                                                            "authentication": "login",
-                                                            "domain": "spreecommerce.com"
-                                                          }] 
+  "store_id":"1234",
+  "message_id":"abc",
+  "message":"notification:info",
+  "payload":{
+    "subject":"This is an info notification",
+    "description":"You just received an info notification, live long and prosper!",
+    "parameters":[
+      {
+        "name":"smtp.from",
+        "type":"string",
+        "value":"noreply@spreecommerce.com"
+      },
+      {
+        "name":"smtp.to",
+        "type":"string",
+        "value":"spree@example.com"
+      },
+      {
+        "name":"smtp.cc",
+        "type":"string",
+        "value":"spree+cc@example.com"
+      },
+      {
+        "name":"smtp.bcc",
+        "type":"string",
+        "value":"spree+bcc@example.com"
+      },
+      {
+        "name":"smtp.options",
+        "type":"list",
+        "value":[
+          {
+            "address":"smtp.mandrillapp.com",
+            "port":"587",
+            "user_name":"peter@spreecommerce.com",
+            "password":"p4ssw0rd!",
+            "enable_starttls_auto":"true",
+            "authentication":"login",
+            "domain":"spreecommerce.com"
+          }
+        ]
       }
     ]
   }
 }
 ```
-
-
 
 # Local testing
 ```
@@ -66,5 +85,3 @@ The url is
 ```
 http://localhost:8080/send
 ```
-
-TODO : Curl sample Post
