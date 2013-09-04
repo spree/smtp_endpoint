@@ -19,7 +19,7 @@ class SmtpSender
     rescue => exception
       return 500, {
         'message_id' => @message_id,
-        'payload' => @config,
+        'payload' => {'config' => @config, 'message' => message.inspect},
         'error' => exception.message,
         'backtrace' => exception.backtrace
       }
@@ -27,7 +27,7 @@ class SmtpSender
 
     return 200, {
       'message_id' => @message_id,
-      'messages' => [{ 'message' => 'email:sent', 'payload' => {"status" => message.inspect} }]
+      'messages' => [{ 'message' => 'email:sent', 'payload' => {"status" => "ok"} }]
     }
   end
 
