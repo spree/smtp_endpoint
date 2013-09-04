@@ -27,7 +27,7 @@ class SmtpSender
 
     return 200, {
       'message_id' => @message_id,
-      'messages' => [{ 'message' => 'email:sent', 'payload' => {"status" => "ok"} }]
+      'messages' => [{ 'message' => 'email:sent', 'payload' => {} }]
     }
   end
 
