@@ -36,6 +36,9 @@
             "data_type": "list"
           }
         ]
+      },
+      "recommends": {
+        "messages": ["notification:info", "notification:warn", "notification:error"]
       }
     }
   ]
