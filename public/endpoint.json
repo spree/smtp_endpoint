@@ -3,7 +3,7 @@
   "display": "SMTP Endpoint",
   "description": "Endpoint that will send notifications via arbitrary smtp server",
   "help": "http://guides.spreecommerce.com/integration/endpoints",
-  "consumers": [
+  "services": [
     {
       "name": "send",
       "path": "/send",
