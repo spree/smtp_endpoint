@@ -2,7 +2,8 @@
   "name": "smtp",
   "display": "SMTP Endpoint",
   "description": "Endpoint that will send notifications via arbitrary smtp server",
-  "help": "http://guides.spreecommerce.com/integration/endpoints",
+  "help": "http://guides.spreecommerce.com/integration/smtp_integration.html",
+  "icon_url": "smtp.png",
   "services": [
     {
       "name": "send",
